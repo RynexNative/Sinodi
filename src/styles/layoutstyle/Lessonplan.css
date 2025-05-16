@@ -1,0 +1,78 @@
+.lesson-dashboard {
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .stats {
+    margin-top: 10px;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stat-card {
+    flex: 1;
+    background-color: var(--color-card);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .stat-card h4 {
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+  
+  .stat-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-text);
+  }
+  
+  .filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+  }
+  
+  .filters select,
+  .filters input[type="date"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .add-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .lesson-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .lesson-table th,
+  .lesson-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .lesson-table button {
+    margin-right: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  

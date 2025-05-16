@@ -1,0 +1,141 @@
+.attendance {
+    margin: 10px 30px;
+}
+
+.mini-para {
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .header button {
+    padding: 0.6rem 1.2rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .mini-title {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .mini-title input {
+      height: 30px;
+      border-radius: 5px;
+      border: 1px solid gray;
+      background: #f6f2f2dc;
+  }
+
+  div.card {
+    background-color: var(--card);
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
+    transition: 0.3s ease;
+  }
+
+  body.dark .card {
+    background-color: var(--card-dark);
+    border-color: var(--border-dark);
+  }
+
+  div.card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .card p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--color-text);
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .filters select, .filters input {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 1rem;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+    background: var(--color-bg);
+  }
+  th {
+    background: var(--th-bg);
+  }
+  tr:nth-child(even){
+    background: #81b7cd87;
+  }
+
+  th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--table-border);
+  }
+
+  tr:hover {
+    background-color: #cdcdcd4b;
+  }
+
+  body.dark tr:hover {
+    background-color: #3b4252;
+  }
+
+  .actions .button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    margin-right: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .actions button.download {
+    background-color: #10b981;
+  }
+
+  @media(max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }

@@ -1,0 +1,117 @@
+:root {
+    --color-bg: #f5f7fa;
+    --color-text: #1f2937;
+    --color-primary: #2d89ef;
+    --color-secondary: #e5e7eb;
+    --color-card: #ffffff;
+    --card-p: gray;
+
+    --primary-color: #4A90E2;
+    --secondary-color: #E0E6ED;
+    --text-color: #333333;
+    --background-color: #F7F9FB;
+    --accent-color: #50C878;
+
+
+
+
+    --bg: #2d89ef;
+    --text: #1f2937;
+    --primary: #2d89ef;
+    --card: #ffffff;
+    --border: #cecfd1bc;
+    --table-border: black;
+    --th-bg: #13526465;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: all 0.3s ease;
+    display: flex;
+    width: 100vw;
+}
+
+body.dark {
+    --color-bg: #1e293b;
+    --color-text: #f1f5f9;
+    --color-card: #334155;
+    --card-p: #d4d5d5;
+
+    --primary-color: #2d89ef;
+    --secondary-color: #dad7d6b0;
+    /* --text-color: #333333; */
+    --background-color: #2d89ef;
+    --accent-color: #0d3f81d3;
+
+    --bg-dark: #1e293b;
+    --text-dark: #f1f5f9;
+    --card-dark: #334155;
+    --border-dark: #475569;
+    --border: #e5e7eb;
+    --table-border: #e5e7eb;
+    --th-bg: #171f2c;
+}
+
+div#root {
+    display: flex;
+    width: 100%;
+}
+
+@keyframes pulse {
+    0% { 
+        opacity: 0.8;
+        background-color: rgba(105, 150, 202, 0.653); }
+    50% { opacity: 0.3; 
+        background-color: rgb(100, 160, 238);}
+    100% { opacity: 0.8; 
+        background-color: rgba(104, 145, 211, 0.653);}
+  }
+  
+  @media print {
+    body * {
+      visibility:visible;
+    }
+  
+    .container, .container * {
+      visibility: visible;
+    }
+  
+    .container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      font-size: 16px; /* ongeza size ya maandishi */
+      padding: 20px;
+      line-height: 1.5;
+    }
+  
+    .print-btn {
+      display: none;
+    }
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  
+    table, th, td {
+      border: 1px solid black;
+    }
+  
+    th, td {
+      padding: 10px;
+      text-align: left;
+      font-size: 14px; /* adjust for print readability */
+    }
+  }
+  

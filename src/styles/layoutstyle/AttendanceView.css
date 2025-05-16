@@ -1,0 +1,199 @@
+.container2 {
+    max-width: 1000px;
+    margin: auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .header h2 {
+    margin: 0;
+  }
+
+  .info {
+    margin-bottom: 1.5rem;
+  }
+
+  .summary {
+    background: var(--card-dark);
+    border-left: 5px solid #0284c7;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .summary div {
+    font-weight: 600;
+  }
+
+  .actions {
+    margin-bottom: 1.5rem;
+  }
+
+  .actions button {
+    padding: 0.5rem 1rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+
+  div.table {
+    /* width: 100%; */
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+
+  th, td {
+    padding: 0.75rem 1rem;
+    /* border-bottom: 1px solid #e5e7eb; */
+    text-align: left;
+  }
+
+  tr:hover {
+    background-color: #f3f4f6;
+  }
+
+  .status-present {
+    color: green;
+    font-weight: bold;
+  }
+
+  .status-absent {
+    color: red;
+    font-weight: bold;
+  }
+
+  .status-late {
+    color: orange;
+    font-weight: bold;
+  }
+
+  .status-excused {
+    color: #0ea5e9;
+    font-weight: bold;
+  }
+
+  .back-btn {
+    display: inline-block;
+    background-color: #6b7280;
+    margin-top: 10px;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+
+  @media print {
+    .container2 {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
+    }
+  
+  .header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+  
+    .header h2 {
+      margin: 0;
+    }
+  
+    .info {
+      margin-bottom: 1.5rem;
+    }
+  
+    .summary {
+      background: var(--card-dark);
+      border-left: 5px solid #0284c7;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+  
+    .summary div {
+      font-weight: 600;
+    }
+  
+    .actions {
+      margin-bottom: 1.5rem;
+    }
+  
+    .actions button {
+      padding: 0.5rem 1rem;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      margin-right: 0.5rem;
+      cursor: pointer;
+    }
+  
+    div.table {
+      /* width: 100%; */
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+  
+    th, td {
+      padding: 0.75rem 1rem;
+      /* border-bottom: 1px solid #e5e7eb; */
+      text-align: left;
+    }
+  
+    tr:hover {
+      background-color: #f3f4f6;
+    }
+  
+    .status-present {
+      color: green;
+      font-weight: bold;
+    }
+  
+    .status-absent {
+      color: red;
+      font-weight: bold;
+    }
+  
+    .status-late {
+      color: orange;
+      font-weight: bold;
+    }
+  
+    .status-excused {
+      color: #0ea5e9;
+      font-weight: bold;
+    }
+  
+    .back-btn {
+      display: inline-block;
+      background-color: #6b7280;
+      margin-top: 10px;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+  }
