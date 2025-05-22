@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css"
 
 import Login from './pages/Login'
@@ -20,51 +20,59 @@ import Levels from './pages/Levels';
 import SchemeOfWorkForm from './pages/SchemeOfWorkForm';
 import Table from './pages/Table';
 import LessonplanEdit from './pages/LessonplanEdit';
+import Managestudent from './pages/Managestudent';
+import Timetable from './pages/Timetable';
 
 function App() {
 
   return (
-      <Routes>
-        <Route index element={<Login />} />
-        <Route
-          element={
-            <ProtectedRoute />
-          }>
-          <Route element={<Tdashboard />}>
+    <Routes>
+      <Route index element={<Login />} />
+      <Route
+        element={
+          <ProtectedRoute />
+        }>
+        <Route element={<Tdashboard />}>
 
-            {/* test routes */}
-            <Route path='/table' element = {<Table />} />
+          {/* test routes */}
+          <Route path='/table' element={<Table />} />
+          <Route path='/level' element={<Levels />} />
+          <Route path='/profile' element={<Profile />} />
+
+          {/* Dashboard */}
+          <Route path='/dashboard' element={<Dashiboard />} />
+
+          {/* Manage student */}
+          <Route path='/manage-students' element={<Managestudent/>} />
+
+          {/* Time Table Management */}
+          <Route path='time-table' element={<Timetable />}/>
 
 
-            <Route path='/dashboard' element={<Dashiboard />} />
+          {/* Lesson Plannign Routes */}
+          <Route path='/lesson-planning' element={<Lessonplan />} />
+          <Route path='/lesson-planning/lesson-view' element={<LessonPlanView />} />
+          <Route path='/lesson-planning/add-lessonplanning' element={<LessonplanAdd />} />
+          <Route path='/lesson-planning/edit-lessonplanning' element={<LessonplanEdit />} />
 
-            <Route path='/profile' element = {<Profile />} />
-            <Route path='/level' element = {<Levels />} />
+          {/* Notes Routes */}
+          <Route path="/notes" element={<Notes />} />
 
-            {/* Lesson Plannign Routes */}
-            <Route path='/lesson-planning' element={<Lessonplan />} />
-            <Route path='/lesson-planning/lesson-view' element = {<LessonPlanView />} />
-            <Route path='/lesson-planning/add-lessonplanning' element={<LessonplanAdd />} />
-            <Route path='/lesson-planning/edit-lessonplanning' element = {<LessonplanEdit />} />
+          {/* Attendance Routes */}
+          <Route path="/attendance" element={<Attendance />} ></Route>
+          <Route path='/attendance/view-attendance' element={<AttendanceView />} />
 
-            {/* Notes Routes */}
-            <Route path="/notes" element = {<Notes />} />
+          {/* Scheme of work Routes */}
+          <Route path="/scheme-of-work" element={<Schemeofwork />} />
+          <Route path='/scheme-of-work/add-scheme' element={<SchemeOfWorkForm />} />
 
-            {/* Attendance Routes */}
-            <Route path="/attendance" element = {<Attendance />} ></Route>
-            <Route path='/attendance/view-attendance' element = {<AttendanceView />}/>
+          {/* Setting Routes */}
+          <Route path="/setting" element={<Setting />} />
 
-            {/* Scheme of work Routes */}
-            <Route path="/scheme-of-work" element = {<Schemeofwork />} />
-            <Route path='/scheme-of-work/add-scheme' element ={<SchemeOfWorkForm />} /> 
-
-            {/* Setting Routes */}
-            <Route path="/setting" element = {<Setting />} />
-
-          </Route>
         </Route>
-        <Route path='*' element={< Notfound />} />
-      </Routes>
+      </Route>
+      <Route path='*' element={< Notfound />} />
+    </Routes>
   )
 }
 

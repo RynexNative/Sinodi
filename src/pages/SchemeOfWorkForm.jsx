@@ -39,7 +39,7 @@ const SchemeOfWorkForm = () => {
   <div className="container">
    <h1>Scheme of Work Entry Form</h1>
 
-   <div className="form-info">
+   <div className="form-infoscheme">
     {Object.entries(info).map(([key, value]) => (
      <div key={key}>
       <label htmlFor={key}>{key.charAt(0).toUpperCase() + key.slice(1)}</label>
@@ -55,11 +55,11 @@ const SchemeOfWorkForm = () => {
     ))}
    </div>
 
-   <div className="controls">
+   <div className="controlsscheme">
     <button onClick={addRow}>+ Add Row</button>
    </div>
 
-   <table>
+   <table className='tablescheme'>
     <thead>
      <tr>
       {[
@@ -89,7 +89,7 @@ const SchemeOfWorkForm = () => {
    </table>
 
    <div style={{ textAlign: 'right' }}>
-    <button className="submit-btn" onClick={handleSubmit}>Submit Scheme</button>
+    <button className="submit-btnscheme" onClick={handleSubmit}>Submit Scheme</button>
    </div>
   </div>
  );

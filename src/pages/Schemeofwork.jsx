@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/layoutstyle/Schemeofwork.css';
+import { useNavigate } from 'react-router-dom';
 
 const schemeData = [
   {
@@ -25,6 +26,8 @@ const schemeData = [
 ];
 
 const Schemeofwork = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="scheme-dashboard">
       <h2>📘 Scheme of Work Dashboard</h2>
@@ -77,7 +80,7 @@ const Schemeofwork = () => {
                 </span>
               </td>
               <td>
-                <button>View</button>
+                <button onClick={()=>navigate('add-scheme')}>View</button>
                 <button>Edit</button>
                 <button>Delete</button>
               </td>

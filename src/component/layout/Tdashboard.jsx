@@ -8,6 +8,9 @@ import axiosAuthApi from '../../utils/http'
 function Tdashboard() {
     const [selectclass,setselectClass] = useState(null);
     const [selectlevel,setselectLevel] = useState(null);
+    const [profile,setprofile] = useState(null);
+
+    const [loding, setIsLoading] = useState(true)
     // const [selectclass,setselectClass] = useState(null);
 
     useEffect(() => {
@@ -15,7 +18,7 @@ function Tdashboard() {
             try{
                 const resp = await axiosAuthApi.get('/classes/select-classes/', {})
                 // //console.log(resp)
-                setselectClass(resp)
+                setselectClass(resp);
                 
             }catch(err){
                 console.log(err)
@@ -31,17 +34,34 @@ function Tdashboard() {
             }
 
         }
+        const get_profile = async() => {
+            try{
+                const resp = await axiosAuthApi.get('/auth/profile/', {});
+                setprofile(resp)
+                setIsLoading(false)
+                // console.log(resp)
+
+            }catch(err){
+                console.log(err)
+            }
+
+        }
         get_class()
         get_level()
+        get_profile()
+        
     }, [])
+    // const profileimage = profile?.profile.profile_picture
+    const context = {selectclass, selectlevel, profile}
+    // console.log(profileimage)
 
-    const context = {selectclass, selectlevel }
+    // console.log(profile)
     
     return (
         <>
             <Sidebar />
             <main className="main-content">
-                <Navbar />
+                <Navbar profile={profile}/>
                 <Outlet context={context}/>
 
             </main>

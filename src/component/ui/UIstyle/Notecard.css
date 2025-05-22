@@ -1,0 +1,51 @@
+.note-body{
+    background: rgb(204, 214, 226);
+    max-width: 700px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border-left: 20px solid rgb(83, 129, 255);
+    border-radius: 20px;
+
+}
+
+.card-contant{
+    background: transparent;
+    padding-top: 10px;
+    height: 100%;
+}
+
+.note-body img {
+    width: 100px;
+    height: 125px;
+    margin: 9px;
+
+}
+
+.note-body h4{
+    font-size: 12px;
+}
+.note-body p {
+    font-size: 10px;
+}
+
+input[type=search]{
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+    border-top: 1px dashed purple;
+    border-bottom:1px dashed purple ;
+    width: 30rem;
+    padding: 0.5rem;
+    border-radius: 30px;
+    background: #f7fbff;
+    font-size: 19px;
+    
+}
+
+input[type=search]:hover{
+    border-left: 5px solid rgb(253, 129, 67);
+    border-right: 5px solid rgb(74, 145, 252);
+    border-top: 2px solid rgb(9, 128, 0);
+    border-bottom:2px solid rgb(26, 128, 0) ;
+}

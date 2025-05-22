@@ -1,0 +1,20 @@
+.card-container {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    /* background-color: black; */
+    max-width: 60rem;
+    /* grid-column: ; */
+}
+
+.Note-container{
+    background: #d2e8fc74;
+    padding: 5em;
+}
+
+.Note-container h1{
+    color: black;
+    text-align: left;
+    padding: 20px;
+    /* background: #000; */
+    margin: 0;
+}

@@ -1,18 +1,22 @@
 import React, { use } from 'react'
 import '../styles/layoutstyle/Dashboard.css'
-import { useUser } from '../context/userContext'
+import { useOutletContext } from 'react-router-dom'
+// import { useUser } from '../context/userContext'
 
 function Dashiboard() {
-    const {userProfile} = useUser();
+    const context = useOutletContext();
+    // const {userProfile} = useUser();
+    const profileinfo = context?.profile
 
-    const userimage = userProfile?.profile
+    console.log(profileinfo)
+    // const userimage = userProfile?.profile
   return (
     
     <div className="dashboard fade-in">
             <div className="card welcome">
-                <img src={userimage?.profile_picture} alt="" width={80} height={80} />
+                <img  src={profileinfo?.profile?.profile_picture} alt="" width={80} height={80} />
                 <div>
-                    <h3>Welcome back, {userProfile?.first_name}</h3>
+                    <h3>Welcome back, {profileinfo?.first_name}</h3>
                     <p>Today is Monday, April 14, 2025</p>
                 </div>
             </div>

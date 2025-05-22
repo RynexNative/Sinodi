@@ -1,0 +1,61 @@
+.settings-container {
+    max-width: 1000px;
+    margin: auto;
+    /* display: flex; */
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1d4ed8;
+  }
+  
+  .settings-grid {
+    display: flex;
+    /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
+    gap: 1.5rem;
+    /* background: #000; */
+  }
+  
+  @media (max-width: 450px){
+    .settings-grid{
+        background: #000;
+        display: grid;
+        
+    }
+  }
+  
+  .settings-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 6px solid #2563eb;
+  }
+  
+  .settings-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  }
+  
+  .settings-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #1e40af;
+  }
+  
+  .settings-card p {
+    color: #475569;
+    font-size: 0.95rem;
+  }
+  
+  .settings-card.danger {
+    border-left-color: #dc2626;
+  }
+  
+  .settings-card.danger h3 {
+    color: #dc2626;
+  }
