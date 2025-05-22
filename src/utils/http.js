@@ -2,7 +2,7 @@ import axios from "axios";
 import { resetAuthStatus } from "./AuthBus";
 
 const axiosAuthApi = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: "https://sinodiback.onrender.com/api",
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
