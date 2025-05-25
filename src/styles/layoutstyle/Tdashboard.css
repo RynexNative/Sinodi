@@ -2,5 +2,14 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
+    width: 10%;
+    height: 100%;
+    /* overflow-y: scroll; */
+}
+
+.Outlet{
+    overflow-y: scroll;
+    /* background: #000; */
+    height: 100%;
+    padding: 40px;
 }

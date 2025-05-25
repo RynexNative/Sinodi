@@ -22,6 +22,7 @@ import Table from './pages/Table';
 import LessonplanEdit from './pages/LessonplanEdit';
 import Managestudent from './pages/Managestudent';
 import Timetable from './pages/Timetable';
+import Student_registrationform from './pages/Student_registrationform';
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
 
           {/* Manage student */}
           <Route path='/manage-students' element={<Managestudent/>} />
+          <Route path='/manage-students/register-student/' element = {<Student_registrationform/>}/>
 
           {/* Time Table Management */}
           <Route path='time-table' element={<Timetable />}/>

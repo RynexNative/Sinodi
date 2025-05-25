@@ -1,12 +1,13 @@
 .sidebar {
     width: 240px;
-    min-height: 100vh;
+    height: 100vh;
     background-color: var(--color-card);
     padding: 2rem 1rem;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    /* position:sticky; */
 }
 
 .sidebar.dark {
