@@ -2,7 +2,7 @@ import axios from "axios";
 import { resetAuthStatus } from "./AuthBus";
 
 const axiosAuthApi = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: "https://sinodiback.onrender.com/api",
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
@@ -45,7 +45,7 @@ axiosAuthApi.interceptors.response.use(
 
       try {
         // console.log('hapaa')
-        const res = await axios.post("http://localhost:8000/api/auth/refresh/", {}, {
+        const res = await axios.post("https://sinodiback.onrender.com/api/auth/refresh/", {}, {
           withCredentials: true, // Kusafirisha cookies ikiwa inahitajika
           headers: {
             'Content-Type': 'application/json', // Hakikisha header ya JSON
