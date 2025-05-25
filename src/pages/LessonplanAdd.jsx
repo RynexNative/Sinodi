@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/layoutstyle/LessonplanAdd.css';
 import axiosAuthApi from '../utils/http';
+import { useNavigate } from 'react-router-dom';
 
 function LessonplanAdd() {
+  const navigate = useNavigate()
   const [rows, setRows] = useState([
     { stage_name: 'eg: introduction', duration_minutes: '', teaching_activities: '', learning_activities: '', assessment_criteria: '' },
     { stage_name: 'eg: Competence Development', duration_minutes: '', teaching_activities: '', learning_activities: '', assessment_criteria: '' },
@@ -60,6 +62,9 @@ function LessonplanAdd() {
     try {
       const resp = await axiosAuthApi.post('/lesson-planning/create-lesson-planning', { ...obj })
       console.log(resp)
+
+      navigate('/lesson-planning')
+
     } catch (error) {
       console.log(error)
     }
