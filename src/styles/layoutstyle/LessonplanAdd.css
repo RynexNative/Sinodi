@@ -17,6 +17,13 @@ h3 {
 .section {
     margin: 20px 0;
 }
+.section select{
+    background: #f9f9f9ad;
+    height: 2.5em;
+    padding: 5px;
+    border-radius: 0.5em;
+    border: 0.5px solid rgba(65, 68, 84, 0.252);
+}
 
 .row {
     display: flex;
@@ -46,17 +53,21 @@ textarea {
     border-radius: 4px;
     border: 1px solid #ccc;
     font-size: 14px;
+    
 }
 
 textarea {
     resize: vertical;
     height: 100%;
+    
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    width: 100%;
+
 }
 
 table,
@@ -83,6 +94,17 @@ td {
     border: none;
 }
 
+.Add-row{
+    background: #27ae60;
+    color: white;
+    padding: 0.5em;
+
+    margin: 10px 0 0 2px;
+    border-radius: 5px;
+    border: none;
+}
+
+
 .submit-btn {
     display: block;
     width: 100%;
@@ -100,3 +122,4 @@ td {
 .submit-btn:hover {
     background-color: #1b5fa7;
 }
+

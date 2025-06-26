@@ -68,7 +68,7 @@ const LessonPlanView = () => {
 
       <div className="section">
         <h3>Student Attendance Summary</h3>
-        <table>
+        <table className='studentNo'>
           <thead>
             <tr>
               <th colSpan="7">Number of Students</th>
@@ -134,7 +134,7 @@ const LessonPlanView = () => {
 
       <div className="section">
         <h3>Teaching and Learning Process</h3>
-        <table>
+        <table className='Viewtable'>
           <thead>
             <tr>
               <th>Stage</th>

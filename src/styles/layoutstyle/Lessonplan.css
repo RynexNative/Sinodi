@@ -77,3 +77,58 @@
     border-radius: 4px;
   }
   
+
+  table .button-delete {
+    background: rgb(225, 15, 15);
+    color: white;
+    width: 71em;
+    padding: 8px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+table .button-delete:hover{
+    background: #a81d1d;
+    /* width: 5.5em; */
+    padding: 8px;
+    /* margin: 1px; */
+}
+
+table .button-delete:active{
+    background: #e25e06;
+}
+
+table .Edit-button{
+  background: #2563eb;
+  margin: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin: 3px 10px;
+}
+
+table .Edit-button:hover{
+  background: #1b4aaf;
+}
+
+table .View-button{
+  background: #3abc6e;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin: 3px 10px;
+}
+
+table .View-button:hover{
+  background: #2b8c52;
+  
+}
+
+table i {
+  width: 5px;
+  height: 5px;
+  margin: 0 10px 0 0;
+}

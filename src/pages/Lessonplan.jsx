@@ -17,15 +17,28 @@ const Lessonplan = () => {
   const [level,setLevel] = useState('all')
   const [classes, setClasses] = useState('all')
 
-  useEffect(() => {
-    const lessonPlanns = async () => {
+  const lessonPlanns = async () => {
+    try{
       const response = await axiosAuthApi.get('/lesson-planning/', {})
-
+  
       setLessonPlann(response)
       setIsLoading(false)
       console.log(response)
+    }catch(err){
+      console.log(err)
     }
+  }
 
+  const handledelete = async(lessonId) => {
+    try{
+      const resp = await axiosAuthApi.delete(`/lesson-planning/${lessonId}/delete/`)
+      lessonPlanns();
+    }catch(err){
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
     lessonPlanns()
   }, [])
 
@@ -76,8 +89,8 @@ const Lessonplan = () => {
           onChange={(e)=>setLevel(e.target.value)}
         >
           <option value='all'>Select Level</option>
-          {context?.selectlevel?.map((level) => (
-            <option value={level.name}>{level.name}</option>
+          {context?.selectlevel?.map((level,index) => (
+            <option key={index} value={level.name}>{level.name}</option>
           ))}
         </select>
         <select 
@@ -85,8 +98,8 @@ const Lessonplan = () => {
           onChange={(e)=>setClasses(e.target.value)}
           >
           <option value="all">All class</option>
-          {context?.selectclass?.map((classes) => (
-            <option value={classes.name}>{classes.name}</option>
+          {context?.selectclass?.map((classes,index) => (
+            <option key={index} value={classes.name}>{classes.name}</option>
             ))}
         </select>
         <input type="date" />
@@ -135,13 +148,13 @@ const Lessonplan = () => {
                 <td>{lesson.date}</td>
                 <td>{lesson.status}</td>
                 <td>
-                  <button onClick={() => navigate('lesson-view', { state: { lesson } })}>
-                    View
+                  <button onClick={() => navigate('lesson-view', { state: { lesson } })} className="View-button">
+                    <i className="fas fa-eye"></i> View
                   </button>
-                  <button onClick={()=> navigate('edit-lessonplanning', {state:{lesson}})}>
-                    Edit
+                  <button onClick={()=> navigate('edit-lessonplanning', {state:{lesson}})} className='Edit-button'>
+                    <i className="fas fa-edit"></i> Edit
                   </button>
-                  <button>Delete</button>
+                  <button className="button-delete" onClick={()=>handledelete(lesson.id)}> <i className="fas fa-trash"></i> Delete</button>
                 </td>
               </tr>
             ))

@@ -5,17 +5,18 @@ import { AuthProvider } from './context/authContext.jsx'
 import UserProvider from './context/userContext.jsx'
 // import { BrowserRouter } from "react-router-dom";
 import { HashRouter } from 'react-router-dom';
+import { GoogleOAuthProvider } from '@react-oauth/google'
+
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <HashRouter>
-      <AuthProvider>
-        <UserProvider>
+    <GoogleOAuthProvider clientId="215603538898-tucljistpuqifiv882pcqfp0cgu8f3ib.apps.googleusercontent.com">
+      <HashRouter>
+        <AuthProvider>
           <App />
-
-        </UserProvider>
-      </AuthProvider>
-    </HashRouter>
+        </AuthProvider>
+      </HashRouter>
+    </GoogleOAuthProvider>
   </StrictMode>,
 )

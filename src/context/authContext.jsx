@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext, createContext } from "react";
 import axiosAuthApi from "../utils/http";
-import { useNavigate } from "react-router-dom";
+import { replace, useNavigate } from "react-router-dom";
+
 
 
 export const Authcontext = createContext();
@@ -27,6 +28,8 @@ export const AuthProvider = ({ children }) => {
             setIsAuthenticated(false);
         }
     };
+
+    
 
     const logout = async () => {
         try {

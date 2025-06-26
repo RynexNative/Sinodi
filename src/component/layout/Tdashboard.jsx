@@ -8,6 +8,7 @@ import axiosAuthApi from '../../utils/http'
 function Tdashboard() {
     const [selectclass, setselectClass] = useState(null);
     const [selectlevel, setselectLevel] = useState(null);
+    const [selectsubject, setselectSubject] = useState(null);
     const [profile, setprofile] = useState(null);
 
     const [loding, setIsLoading] = useState(true)
@@ -46,14 +47,24 @@ function Tdashboard() {
             }
 
         }
+        const get_subjet = async() => {
+            try{
+                const resp = await axiosAuthApi.get('/subjects/select-subject/',{});
+                setselectSubject(resp)
+                // console.log(resp)
+            }catch(err){
+                console.log(err)
+            }
+        }
         get_class()
         get_level()
+        get_subjet()
         get_profile()
 
     }, [])
     // const profileimage = profile?.profile.profile_picture
-    const context = { selectclass, selectlevel, profile }
-    // console.log(profileimage)
+    const context = { selectclass, selectlevel, selectsubject, profile };
+    // console.log(selectsubject[0]?.name)
 
     // console.log(profile)
 

@@ -28,7 +28,10 @@ function Sidebar() {
             <NavLink to ="attendance"><i className="fas fa-calendar-check"></i> Attendance</NavLink>
             <NavLink to= "notes"><i className="fas fa-file-upload"></i> Notes</NavLink>
             <NavLink to = "/lesson-planning"><i className="fas fa-book"></i> Lesson Plans</NavLink>
-            <NavLink to = "scheme-of-work"><i className="fas fa-download"></i> Scheme of Work</NavLink>
+            <NavLink to = "scheme-of-work"><i className="fas fa-file"></i> Scheme of Work</NavLink>
+
+            <NavLink to='/draft'><i className="fas fa-save"></i> Draft</NavLink>
+
             <NavLink to = 'setting'><i className="fas fa-cog"></i> Settings</NavLink>
             <button onClick={handlelogout}><i className="fas fa-sign-out-alt"></i> Logout</button>
         </ul>

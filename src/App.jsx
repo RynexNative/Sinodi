@@ -23,6 +23,8 @@ import LessonplanEdit from './pages/LessonplanEdit';
 import Managestudent from './pages/Managestudent';
 import Timetable from './pages/Timetable';
 import Student_registrationform from './pages/Student_registrationform';
+import Draft from './pages/Draft';
+import SchemeView from './pages/SchemeView';
 
 function App() {
 
@@ -67,6 +69,10 @@ function App() {
           {/* Scheme of work Routes */}
           <Route path="/scheme-of-work" element={<Schemeofwork />} />
           <Route path='/scheme-of-work/add-scheme' element={<SchemeOfWorkForm />} />
+          <Route path='/scheme-of-work/view-scheme' element={<SchemeView />} />
+
+          {/* Draft Routes */}
+          <Route path='/draft' element ={<Draft />} />
 
           {/* Setting Routes */}
           <Route path="/setting" element={<Setting />} />
