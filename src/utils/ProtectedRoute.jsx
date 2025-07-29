@@ -1,11 +1,13 @@
 import { useContext, useState, useEffect } from "react";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import {Authcontext} from "../context/authContext";
 import axiosAuthApi from "./http";
 import { useAuthStatus } from "./AuthBus"
 
 
 const ProtectedRoute = () => {
+
+    const navigate = useNavigate()
     // const { isAuthenticated } = useContext(Authcontext);
     const {
         isAuthenticated,
@@ -20,10 +22,18 @@ const ProtectedRoute = () => {
     
             const response = await axiosAuthApi.post("/auth/check-auth/");
             console.log(response)
-            const authStatus = response?.isAuthenticated;
-    
-            setIsAuthenticated(!!authStatus);
-            // setAuth(!!authStatus);
+
+            if(response.isAuthenticated==true){
+                const authStatus = response?.isAuthenticated;
+        
+                setIsAuthenticated(!!authStatus);
+                // setAuth(!!authStatus);
+
+            }else{
+                setIsAuthenticated(false)
+                navigate('/')
+            }
+
         } catch (error) {
             setIsAuthenticated(false);
             // setAuth(false);

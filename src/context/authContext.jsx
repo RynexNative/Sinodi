@@ -24,7 +24,8 @@ export const AuthProvider = ({ children }) => {
             // setIsAuthenticated(true)
 
         } catch (error) {
-            console.error("❌ Login failed:", error);
+            return error
+            // console.error("❌ Login failed:", error);
             setIsAuthenticated(false);
         }
     };

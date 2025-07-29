@@ -8,7 +8,7 @@ function Dashiboard() {
     // const {userProfile} = useUser();
     const profileinfo = context?.profile
 
-    console.log(profileinfo)
+    // console.log(profileinfo)
     // const userimage = userProfile?.profile
   return (
     

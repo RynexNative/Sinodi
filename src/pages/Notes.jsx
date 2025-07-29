@@ -1,53 +1,121 @@
-import Notecard from "../component/ui/Notecard"
-
-import '../styles/layoutstyle/Notes.css'
-
+import React, { useState } from 'react';
+import '../styles/layoutstyle/Notes.css';
 
 
-function Notes() {
+
+
+
+
+const initialNotes = [
+  {
+    id: 1,
+    topic: "Photosynthesis",
+    subject: "Biology",
+    class: "Form 2",
+    date: "2025-06-01",
+    type: "Written",
+  },
+  {
+    id: 2,
+    topic: "Algebra",
+    subject: "Mathematics",
+    class: "Form 1",
+    date: "2025-05-29",
+    type: "PDF",
+  },
+];
+
+const Notes = () => {
+  const [search, setSearch] = useState("");
+  const [subjectFilter, setSubjectFilter] = useState("All Subjects");
+  const [levelFilter, setLevelFilter] = useState("All Levels");
+  const [notes, setNotes] = useState(initialNotes);
+
+  const filteredNotes = notes.filter((note) => {
+    const matchesSearch = note.topic.toLowerCase().includes(search.toLowerCase());
+    const matchesSubject =
+      subjectFilter === "All Subjects" || note.subject === subjectFilter;
+    const matchesLevel =
+      levelFilter === "All Levels" || note.class === levelFilter;
+    return matchesSearch && matchesSubject && matchesLevel;
+  });
 
   return (
-    <div className="Note-container">
+    <div className="notes-dashboard">
+      <h1 className="page-title">Lesson Notes</h1>
 
-      <div>
-        <h2>Sinode Notes Libralies</h2>
+      <div className="notes-controls">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search by topic..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
 
-        <p>
-          <strong>Sinodi Libral</strong> inakupa nafasi wewe mwalimu kuweza kutunza/kuhifadhi Notes na Summary zako zote katika Libral ya Sinodi kwa usalama zaidi. pia unaweza kuifikia sinodi Libral kwa mda wowote bila gharama yoyote ile kwa urahisi na uharaka zaidi. 
-          <br />
-          <strong>Sinodi Libral</strong> Nimoja ya mpango makakati baora zaidi wa kutunza na kuhifadhi Notes na summary za walimu. Sinodi Library inasehemu kuu tatu....
-          <ul>
-            <li>maktaba ya walimu</li>
-            <li>maktaba ya wanafunzi</li>
-            <li>maktaba ya Notes za kufundishia kwa walimu</li>
-          </ul>
-        </p>
+        <div className="filters">
+          <select
+            className="filter-dropdown"
+            value={subjectFilter}
+            onChange={(e) => setSubjectFilter(e.target.value)}
+          >
+            <option>All Subjects</option>
+            <option>Mathematics</option>
+            <option>Biology</option>
+            <option>Geography</option>
+          </select>
 
+          <select
+            className="filter-dropdown"
+            value={levelFilter}
+            onChange={(e) => setLevelFilter(e.target.value)}
+          >
+            <option>All Levels</option>
+            <option>Form 1</option>
+            <option>Form 2</option>
+            <option>Grade 6</option>
+          </select>
+        </div>
+
+        <div className="action-buttons">
+          <button className="btn write-note">✏️ Write New Note</button>
+          <button className="btn upload-note">📄 Upload PDF</button>
+        </div>
       </div>
 
-
-
-      <div>
-      <h1>hapa ndipo heading inakaa</h1>
-
-      <div>
-      <input type="search" name="" id="" placeholder="search" />
-      {/* <button>Create Note</button> */}
-      <button>Upload Note</button>
-      </div>
-      <div className="card-container">
-        <Notecard />
-        <Notecard />
-        <Notecard />
-        <Notecard />
-        <Notecard />
-        <Notecard />
-      </div>
+      <table className="notes-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Topic</th>
+            <th>Subject</th>
+            <th>Class</th>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredNotes.map((note, index) => (
+            <tr key={note.id}>
+              <td>{index + 1}</td>
+              <td>{note.topic}</td>
+              <td>{note.subject}</td>
+              <td>{note.class}</td>
+              <td>{note.date}</td>
+              <td>{note.type}</td>
+              <td>
+                <button className="btn small">View</button>
+                {note.type === "Written" && (
+                  <button className="btn small">Edit</button>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-
-      </div>
-  )
+  );
 }
 
-export default Notes
-
+export default Notes;

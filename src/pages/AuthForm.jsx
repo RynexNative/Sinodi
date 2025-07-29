@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Authcontext } from "../context/authContext";
-import { replace, useNavigate} from 'react-router-dom'
+import { replace, useNavigate } from 'react-router-dom'
 import { useGoogleLogin } from '@react-oauth/google';
 import axiosAuthApi from "../utils/http";
 
@@ -8,10 +8,10 @@ import axiosAuthApi from "../utils/http";
 
 const AuthForm = ({ type }) => {
 
-  const {login} = useContext(Authcontext)
+  const { login } = useContext(Authcontext)
   const navigate = useNavigate()
 
-  const [isAuth , setisAuth] = useState(null);
+  const [isAuth, setisAuth] = useState(null);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -38,18 +38,18 @@ const AuthForm = ({ type }) => {
             }
           }
         );
-  
+
         // console.log("✅ User Logged In:", res.user);
         // console.log(res)
         if (res) {
-            const auth = res.isAuthenticated
+          const auth = res.isAuthenticated
 
-            if(auth)
+          if (auth)
             navigate('/dashboard', replace)
-          }
+        }
         return res;
 
-  
+
       } catch (err) {
         console.error("❌ Backend Error", err.response?.data || err.message);
       }
@@ -60,25 +60,45 @@ const AuthForm = ({ type }) => {
     flow: "implicit",  // hutumika kwa kutoa access_token
   });
 
+  const [Error_Message, setError_Message] = useState(null);
+  const [loginLoading, setLoginLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoginLoading(true)
     console.log(`${type.toUpperCase()} DATA:`, formData);
     // Hapa unaweza kutuma data kwenda backend
 
-    if(type === 'login'){
+    if (type === 'login') {
       try {
-        const response = await login( formData.email , formData.password)
-        if(response){
-          // console.log(response.isAuthenticated)
-          setisAuth(response.isAuthenticated)
-          const auth = response.isAuthenticated
-          if(auth){
-            console.log('acha haraka.....')
-            navigate('/dashboard', replace);
+        const response = await login(formData.email, formData.password)
+
+        if (response) {
+          setLoginLoading(false)
+          if (response.code == 'ERR_NETWORK') {
+            console.log(response.message)
+            setError_Message(response.message)
+            console.log(response)
+          } else if (response.status == 400) {
+            console.log('Invalid email or password.')
+            setError_Message(response.response.data.non_field_errors[0])
+            console.log(response.response.data.non_field_errors[0])
           }
+
+          else {
+
+            setisAuth(response.isAuthenticated)
+            console.log(response)
+            const auth = response.isAuthenticated
+            if (auth) {
+              console.log('acha haraka.....')
+              navigate('/dashboard', replace);
+            }
+          }
+
         }
-      }catch(error) {
+      } catch (error) {
         console.log(error)
+        setLoginLoading(false)
       }
     }
   };
@@ -86,6 +106,11 @@ const AuthForm = ({ type }) => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <h2>{type === "login" ? "Login" : "Signup"}</h2>
+
+      {Error_Message ? <div class="error-message">
+  <span class="error-icon">⚠️</span>
+  <span class="error-text">{Error_Message}</span>
+</div> : <p></p>}
 
       {type === "signup" && (
         <input
@@ -113,12 +138,16 @@ const AuthForm = ({ type }) => {
         onChange={handleChange}
         required
       />
-      <button type="submit">{type === "login" ? "Login" : "Signup"}</button>
+      {loginLoading ? <button class="loading-btn" disabled>
+        <span class="spinner"></span>
+        Logging in...
+      </button> : <button type="submit">{type === "login" ? "Login" : "Signup"}</button>}
+
 
       <div className="social-login">
         <span>Or {type} with</span>
         <div className="social-buttons">
-          <button onClick={()=>google()} type="button">
+          <button onClick={() => google()} type="button">
             <img src="https://img.icons8.com/color/48/google-logo.png" />
             Google
           </button>

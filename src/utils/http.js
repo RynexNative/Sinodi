@@ -67,7 +67,7 @@ axiosAuthApi.interceptors.response.use(
         // console.error("⚠️ Refresh token expired. Logging out.");
         // console.error(err);
 
-        resetAuthStatus();
+        // resetAuthStatus();
 
         // console.error("hii ndio erro:", err);
 
