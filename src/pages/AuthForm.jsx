@@ -29,7 +29,7 @@ const AuthForm = ({ type }) => {
     onSuccess: async (tokenResponse) => {
       try {
         const res = await axiosAuthApi.post(
-          "http://localhost:8000/api/auth/google/",
+          "/auth/google/",
           { access_token: tokenResponse.access_token },  // <-- CHANGE HERE
           {
             withCredentials: true,  // ruhusu cookie kutoka backend
