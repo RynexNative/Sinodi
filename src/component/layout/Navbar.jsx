@@ -26,13 +26,19 @@ function Navbar(profile) {
   if (isAuthenticated) {
     return (
       <div className="navbar" id="navbar">
-        <div className="profile">
-          <img src={profileinfo?.profile?.profile_picture} alt="Profile Picture" />
-          <span>Welcome, <strong>{profileinfo?.first_name}</strong></span>
-        </div>
-        <div className="icons">
-          <i className="fas fa-bell"></i>
-          <i className="fas fa-sun theme-toggle" id="themeToggle" onClick={handleTheme}></i>
+        <div className="logo">YAMS</div>
+        <div className="left-info">
+          
+          <div className="icons">
+            <i className="fas fa-bell"></i>
+            <i className="fas fa-sun theme-toggle" id="themeToggle" onClick={handleTheme}></i>
+          </div>
+
+          <div className="profile">
+            <img src={profileinfo?.profile?.profile_picture} alt="Profile Picture" />
+            <span><strong>{profileinfo?.first_name}</strong></span>
+          </div>
+
         </div>
       </div>
     )

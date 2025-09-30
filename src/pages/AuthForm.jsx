@@ -107,9 +107,9 @@ const AuthForm = ({ type }) => {
     <form className="form" onSubmit={handleSubmit}>
       <h2>{type === "login" ? "Login" : "Signup"}</h2>
 
-      {Error_Message ? <div class="error-message">
-  <span class="error-icon">⚠️</span>
-  <span class="error-text">{Error_Message}</span>
+      {Error_Message ? <div className="error-message">
+  <span className="error-icon">⚠️</span>
+  <span className="error-text">{Error_Message}</span>
 </div> : <p></p>}
 
       {type === "signup" && (
@@ -138,8 +138,8 @@ const AuthForm = ({ type }) => {
         onChange={handleChange}
         required
       />
-      {loginLoading ? <button class="loading-btn" disabled>
-        <span class="spinner"></span>
+      {loginLoading ? <button className="loading-btn" disabled>
+        <span className="spinner"></span>
         Logging in...
       </button> : <button type="submit">{type === "login" ? "Login" : "Signup"}</button>}
 

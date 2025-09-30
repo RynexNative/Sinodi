@@ -13,6 +13,11 @@ div#navbar.navbar {
 .navbar.dark {
   background-color: var(--color-card-dark);
 }
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
 
 .navbar .profile {
   display: flex;
@@ -25,7 +30,16 @@ div#navbar.navbar {
   height: 40px;
   border-radius: 50%;
 }
+.left-info{
+  display: flex;
+  gap: 2rem;
+}
 
+
+.navbar .icons{
+  /* background: #000; */
+  width: 10em;
+}
 .navbar .icons i {
   margin: 0 0.75rem;
   cursor: pointer;
@@ -35,4 +49,12 @@ div#navbar.navbar {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+
+@media (max-width: 1080px){
+  div#navbar.navbar{
+    position:fixed;
+    z-index: 999999;
+  }
 }

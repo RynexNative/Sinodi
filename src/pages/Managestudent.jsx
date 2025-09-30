@@ -22,8 +22,8 @@ function Managestudent() {
     get_student();
   },[])
   return (
-    <div class="main">
-    <div class="header">
+    <div className="main">
+    <div className="header">
       <h1>Manage Students</h1>
     </div>
     
@@ -31,7 +31,7 @@ function Managestudent() {
       <Link to='register-student' className='actions button'>Register New Student</Link>
     </div>
 
-    <div class="search-box">
+    <div className="search-box">
       <input type="text" id="searchInput" placeholder="Search by name..." />
     </div>
 

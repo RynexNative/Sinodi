@@ -47,12 +47,12 @@ function Tdashboard() {
             }
 
         }
-        const get_subjet = async() => {
-            try{
-                const resp = await axiosAuthApi.get('/subjects/select-subject/',{});
+        const get_subjet = async () => {
+            try {
+                const resp = await axiosAuthApi.get('/subjects/select-subject/', {});
                 setselectSubject(resp)
                 // console.log(resp)
-            }catch(err){
+            } catch (err) {
                 console.log(err)
             }
         }
@@ -69,17 +69,16 @@ function Tdashboard() {
     // console.log(profile)
 
     return (
-        <>
-            <Sidebar />
+        <div className='big-cont'>
+            <Navbar profile={profile} />
             <main className="main-content">
-                <Navbar profile={profile} />
+                <Sidebar />
                 <div className='Outlet'>
                     <Outlet context={context} />
-
                 </div>
 
             </main>
-        </>
+        </div>
     )
 }
 

@@ -61,7 +61,7 @@ function Student_registrationform() {
       <div className="form-section">
         <form id="studentForm">
           <div className="form-group">
-            <label for="fullName">First Name</label>
+            <label htmlFor="fullName">First Name</label>
             <input
               type="text"
               id="fullName"
@@ -70,7 +70,7 @@ function Student_registrationform() {
               required
             />
 
-            <label for="fullName">Second Name</label>
+            <label htmlFor="fullName">Second Name</label>
             <input
               type="text"
               id="fullName"
@@ -79,7 +79,7 @@ function Student_registrationform() {
               required
             />
 
-            <label for="fullName">Last Name</label>
+            <label htmlFor="fullName">Last Name</label>
             <input
               type="text"
               id="fullName"
@@ -89,16 +89,16 @@ function Student_registrationform() {
           </div>
 
           <div className="form-group">
-            <label for="gender">Gender</label>
+            <label htmlFor="gender">Select Gender</label>
             <select id="gender" name='gender' onChange={handlechanges} required>
-              <option value="" selected disabled>Select Gender</option>
+              <option selected disabled>Select Gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
           </div>
 
           <div className="form-group">
-            <label for="dob">Date of Birth</label>
+            <label htmlFor="dob">Date of Birth</label>
             <input
               type="date"
               id="dob"
@@ -109,7 +109,7 @@ function Student_registrationform() {
           </div>
 
           <div className="form-group">
-            <label for="studentId">Student ID</label>
+            <label htmlFor="studentId">Student ID</label>
             <input
               type="text"
               id="studentId"
@@ -120,16 +120,16 @@ function Student_registrationform() {
           </div>
 
           <div className="form-group">
-            <label for="classLevel">Class</label>
+            <label htmlFor="classLevel">Select Class</label>
             <select id="classLevel" name='class_assigned' onChange={handlechanges} required>
-              <option value="" selected disabled>Select Class</option>
+              <option disabled>Select Class</option>
               {selectclass?.map((classd)=>(
-                <option value={classd.id}>{classd.name}</option>
+                <option key={classd.id} value={classd.id}>{classd.name}</option>
               ))}
               
             </select>
 
-            <label for='class-type' className='class-type'>Class Type(Optional)</label>
+            <label htmlFor='class-type' className='class-type'>Class Type(Optional)</label>
             <input
               type="text"
               className='class-type'
@@ -141,7 +141,7 @@ function Student_registrationform() {
           </div>
 
           <div className="form-group">
-            <label for="academicYear">Academic Year</label>
+            <label htmlFor="academicYear">Academic Year</label>
             <input
               type="text"
               id="academicYear"
@@ -152,7 +152,7 @@ function Student_registrationform() {
           </div>
 
           <div className="form-group">
-            <label for="address">Address</label>
+            <label htmlFor="address">Address</label>
             <textarea
               id="address"
               rows="2"
@@ -164,7 +164,7 @@ function Student_registrationform() {
           </div>
 
           <div className="form-group">
-            <label for="guardianName">Guardian Name</label>
+            <label htmlFor="guardianName">Guardian Name</label>
             <input
               type="text"
               id="guardianName"
@@ -175,7 +175,7 @@ function Student_registrationform() {
           </div>
 
           <div className="form-group">
-            <label for="guardianPhone">Guardian Phone</label>
+            <label htmlFor="guardianPhone">Guardian Phone</label>
             <input
               type="tel"
               id="guardianPhone"
