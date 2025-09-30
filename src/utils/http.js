@@ -5,7 +5,7 @@ import { resetAuthStatus } from "./AuthBus";
 // //https://sinodiback.onrender.com/
 
 const axiosAuthApi = axios.create({
-  baseURL: "http://yiiti.rynexnative.com/api",
+  baseURL: "https://yiiti.rynexnative.com/api",
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
