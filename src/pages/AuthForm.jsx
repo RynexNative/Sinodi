@@ -51,7 +51,7 @@ const AuthForm = ({ type }) => {
 
 
       } catch (err) {
-        console.error("❌ Backend Error", err.response?.data || err.message);
+        console.error("❌ Backend Error", err);
       }
     },
     onError: () => {
